@@ -3,7 +3,7 @@ TYPO3 extension Fluid Pages - Bootstrap: Fluid Page Templates for Twitter Bootst
 
 ## What is it?
 
-An integration provider enabling page templating with Fluid templates, using Flux for highly dynamic page variable configuration.
+An extension providing a set of specially formatted Fluid templates usable as page templates enabled by `EXT:fluidpages`
 
 ## What does it do?
 
