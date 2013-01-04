@@ -59,19 +59,4 @@
 	<v:page.content.render column="0" />
 </f:section>
 
-<f:section name="Footer">
-	<!-- footer, optional content elements from colPos 2 (two) -->
-	<v:page.content.render column="2" as="footerContentElements">
-		<f:if condition="{footerContentElements}">
-			<div class="footer">
-			<span class="right">
-				<f:for each="{footerContentElements}" as="footerContentElement">
-					<f:format.raw>{footerContentElement}</f:format.raw>
-				</f:for>
-			</span>
-			</div>
-		</f:if>
-	</v:page.content.render>
-</f:section>
-
 </div>

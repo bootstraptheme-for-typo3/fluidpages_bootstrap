@@ -4,6 +4,12 @@
      xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
      xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
 
+<f:section name="SharedResources">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap.no-icons.min.css" rel="stylesheet">
+	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+</f:section>
+
 <f:section name="PageHeader">
 	<div class="page-header">
 		<h1>{page.title}</h1>
@@ -32,7 +38,7 @@
 	<v:page.menu entryLevel="{v:var.typoscript(path: 'lib.menu.sub.entryLevel')}">
 		<f:if condition="{menu}">
 			<div class="subnav">
-				<div class="container">
+				<div class="container-fluid">
 					<ul class="nav nav-tabs">
 						<f:for each="{menu}" as="submenuPage">
 							<li class="{submenuPage.class}"><a href="{submenuPage.link}" class="{submenuPage.class}">{submenuPage.title}</a></li>
@@ -55,6 +61,27 @@
 			</div>
 		</f:if>
 	</v:page.content.render>
+</f:section>
+
+<f:section name="Footer">
+	<!-- footer, optional content elements from colPos 2 (two) -->
+	<v:page.content.render column="2" as="footerContentElements">
+		<f:if condition="{footerContentElements}">
+			<div class="footer">
+		<span class="right">
+			<f:for each="{footerContentElements}" as="footerContentElement">
+				<f:format.raw>{footerContentElement}</f:format.raw>
+			</f:for>
+		</span>
+			</div>
+		</f:if>
+	</v:page.content.render>
+</f:section>
+
+<f:section name="Sidebar">
+	<div class="sidebar{f:if(condition: addWell, then: ' well')}{f:if(condition: wellSmall, then: ' well-small')}">
+		<v:page.content.render column="3" />
+	</div>
 </f:section>
 
 </div>

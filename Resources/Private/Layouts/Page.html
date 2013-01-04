@@ -10,7 +10,7 @@
 
 <f:render section="Navigation" partial="PageObjects" arguments="{_all}" />
 
-<div class="container">
+<div class="container-fluid">
 	<v:security.allow anyBackendUser="TRUE">
 		<v:once.session>
 			<div class="alert alert-success">
@@ -24,8 +24,9 @@
 	</v:security.allow>
 	<f:render section="HeroUnit" partial="PageObjects" optional="TRUE" arguments="{_all}" />
 	<f:render section="PageHeader" partial="PageObjects" optional="TRUE" arguments="{_all}" />
-	<f:render section="SubNavigation" partial="PageObjects"  optional="TRUE" arguments="{_all}" />
-	<f:render section="Content" />
-	<f:render section="Footer" />
 </div>
-
+<f:render section="SubNavigation" partial="PageObjects"  optional="TRUE" arguments="{_all}" />
+<div class="container-fluid">
+	<f:render section="Content" />
+	<f:render section="Footer" partial="PageObjects" />
+</div>
