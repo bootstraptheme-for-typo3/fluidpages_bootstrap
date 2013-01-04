@@ -11,9 +11,9 @@
 </f:section>
 
 <f:section name="Navigation">
-	<div id="navbar" class="navbar navbar-inverse">
+	<div id="navbar" class="navbar navbar-inverse navbar-static-top">
 		<div class="navbar-inner">
-			<div class="container">
+			<div class="container-fluid navbar-static-top">
 				<a class="brand" href="{v:site.url()}"><v:site.name /></a>
 				<v:page.menu entryLevel="{v:var.typoscript(path: 'lib.menu.main.entryLevel')}">
 					<ul class="nav">
@@ -35,10 +35,14 @@
 				<div class="navbar-inner">
 					<div class="container-fluid">
 						<ul class="nav">
-							<f:for each="{menu}" as="submenuPage">
+							<f:for each="{menu}" as="submenuPage" iteration="iteration">
 								<v:switch value="{submenuPage.doktype}">
 									<v:case case="199" break="TRUE">
-										<li class="disabled"><span class="navbar-text muted">{submenuPage.title}:</span>&nbsp;</li>
+										<li class="disabled">
+											<f:if condition="{iteration.isFirst}" else="&nbsp;&nbsp;" />
+											<span class="navbar-text" style="color: #bbbbbb">{submenuPage.title}:</span>
+											&nbsp;
+										</li>
 									</v:case>
 									<v:case case="default" break="TRUE">
 										<li class="{submenuPage.class}"><a href="{submenuPage.link}" class="{submenuPage.class}">{submenuPage.title}</a></li>
