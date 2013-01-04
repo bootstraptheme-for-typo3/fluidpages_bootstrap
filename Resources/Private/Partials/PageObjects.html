@@ -10,12 +10,6 @@
 	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
 </f:section>
 
-<f:section name="PageHeader">
-	<div class="page-header">
-		<h1>{page.title}</h1>
-	</div>
-</f:section>
-
 <f:section name="Navigation">
 	<div id="navbar" class="navbar navbar-inverse">
 		<div class="navbar-inner">
@@ -35,15 +29,24 @@
 
 <f:section name="SubNavigation">
 	<!-- submenu navigation, collapsible -->
-	<v:page.menu entryLevel="{v:var.typoscript(path: 'lib.menu.sub.entryLevel')}">
+	<v:page.menu entryLevel="{v:var.typoscript(path: 'lib.menu.sub.entryLevel')}" includeSpacers="TRUE">
 		<f:if condition="{menu}">
-			<div class="subnav">
-				<div class="container-fluid">
-					<ul class="nav nav-tabs">
-						<f:for each="{menu}" as="submenuPage">
-							<li class="{submenuPage.class}"><a href="{submenuPage.link}" class="{submenuPage.class}">{submenuPage.title}</a></li>
-						</f:for>
-					</ul>
+			<div class="subnav navbar">
+				<div class="navbar-inner">
+					<div class="container-fluid">
+						<ul class="nav">
+							<f:for each="{menu}" as="submenuPage">
+								<v:switch value="{submenuPage.doktype}">
+									<v:case case="199" break="TRUE">
+										<li class="disabled"><span class="navbar-text muted">{submenuPage.title}:</span>&nbsp;</li>
+									</v:case>
+									<v:case case="default" break="TRUE">
+										<li class="{submenuPage.class}"><a href="{submenuPage.link}" class="{submenuPage.class}">{submenuPage.title}</a></li>
+									</v:case>
+								</v:switch>
+							</f:for>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</f:if>
