@@ -57,6 +57,19 @@
 	</v:page.menu>
 </f:section>
 
+<f:section name="TabNavigation">
+	<!-- tabbed, lower submenu navigation, collapsible -->
+	<v:page.menu entryLevel="{v:var.typoscript(path: 'lib.menu.sub.entryLevel') -> v:math.sum(b: 1)}">
+		<f:if condition="{menu}">
+			<ul class="nav nav-pills">
+				<f:for each="{menu}" as="submenuPage" iteration="iteration">
+					<li class="{submenuPage.class}"><a href="{submenuPage.link}" class="{submenuPage.class}">{submenuPage.title}</a></li>
+				</f:for>
+			</ul>
+		</f:if>
+	</v:page.menu>
+</f:section>
+
 <f:section name="HeroUnit">
 	<!-- hero unit, optional content elements from colPos 1 (one) -->
 	<v:page.content.render column="1" as="heroUnitContentElements">
