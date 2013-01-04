@@ -1,0 +1,66 @@
+{namespace v=Tx_Vhs_ViewHelpers}
+{namespace flux=Tx_Flux_ViewHelpers}
+<f:layout name="Page" />
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+	<f:section name="Configuration">
+		<flux:flexform id="sample-page" label="Sidebar">
+			<flux:flexform.field.input name="distribution" label="Width of sidebar (what remains of a 12-column total is used by main content)"
+			                           eval="int,trim" minimum="0" maximum="11" default="4">
+				<flux:flexform.field.wizard.slider hideParent="TRUE" step="1" width="100" />
+			</flux:flexform.field.input>
+			<flux:flexform.field.select name="position" label="Placement of sidebar" commaSeparatedItems="left,right" />
+			<flux:flexform.grid>
+				<flux:flexform.grid.row>
+					<flux:flexform.grid.column colPos="1" name="Hero Unit" />
+				</flux:flexform.grid.row>
+				<flux:flexform.grid.row>
+					<f:if condition="{0: position} == {0: 'left'}">
+						<flux:flexform.grid.column colPos="3" name="Sidebar Content" />
+						<flux:flexform.grid.column colPos="0" name="Main Content" />
+					</f:if>
+					<f:if condition="{0: position} == {0: 'right'}">
+						<flux:flexform.grid.column colPos="0" name="Main Content" />
+						<flux:flexform.grid.column colPos="3" name="Sidebar Content" />
+					</f:if>
+				</flux:flexform.grid.row>
+				<flux:flexform.grid.row>
+					<flux:flexform.grid.column colPos="2" name="Footer Content" />
+				</flux:flexform.grid.row>
+			</flux:flexform.grid>
+		</flux:flexform>
+	</f:section>
+
+	<f:section name="Resources">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap.no-icons.min.css" rel="stylesheet">
+		<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+	</f:section>
+
+	<f:section name="Content">
+		<div class="row-fluid">
+			<v:switch value="{position}">
+				<v:case case="left" break="TRUE">
+					<div class="span{distribution}">
+						<f:render partial="PageObjects" section="Sidebar" arguments="{_all}" />
+					</div>
+					<div class="span{v:math.subtract(a: 12, b: distribution)}">
+						<v:page.content.render column="0" />
+					</div>
+				</v:case>
+				<v:case case="right" break="TRUE">
+					<div class="span{v:math.subtract(a: 12, b: distribution)}">
+						<v:page.content.render column="0" />
+					</div>
+					<div class="span{distribution}">
+						<f:render partial="PageObjects" section="Sidebar" arguments="{_all}" />
+					</div>
+				</v:case>
+			</v:switch>
+		</div>
+	</f:section>
+
+</div>
