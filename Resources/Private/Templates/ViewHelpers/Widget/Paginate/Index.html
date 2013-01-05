@@ -13,8 +13,8 @@
 		<ul class="paginator">
 			<li>
 				<f:if condition="{pagination.previousPage} > 1">
-					<f:then><f:widget.link class="btn" arguments="{currentPage: pagination.previousPage}">←</f:widget.link></f:then>
-					<f:else><a href="javascript:;" class="btn">←</a></f:else>
+					<f:then><f:widget.link arguments="{currentPage: pagination.previousPage}">←</f:widget.link></f:then>
+					<f:else><a href="javascript:;">←</a></f:else>
 				</f:if>
 			</li>
 			<f:for each="{pagination.pages}" as="page">
@@ -28,10 +28,10 @@
 						<li>
 							<f:if condition="{page.number} > 1">
 								<f:then>
-									<f:widget.link class="btn" arguments="{currentPage: page.number}">{page.number}</f:widget.link>
+									<f:widget.link arguments="{currentPage: page.number}">{page.number}</f:widget.link>
 								</f:then>
 								<f:else>
-									<f:widget.link class="btn">{page.number}</f:widget.link>
+									<f:widget.link>{page.number}</f:widget.link>
 								</f:else>
 							</f:if>
 						</li>
@@ -40,8 +40,8 @@
 			</f:for>
 			<li>
 				<f:if condition="{pagination.nextPage}">
-					<f:then><f:widget.link class="btn" arguments="{currentPage: pagination.nextPage}">→</f:widget.link></f:then>
-					<f:else><a href="javascript:;" class="btn">→</a></f:else>
+					<f:then><f:widget.link arguments="{currentPage: pagination.nextPage}">→</f:widget.link></f:then>
+					<f:else><a href="javascript:;">→</a></f:else>
 				</f:if>
 			</li>
 		</ul>
