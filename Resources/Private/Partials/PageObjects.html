@@ -16,7 +16,7 @@
 			<f:if condition="{enableSearch}">
 				<form class="navbar-search pull-right" method="get" action="{f:uri.page(pageUid: searchPageUid)}">
 					<div class="input-append">
-						<input type="text" name="{searchFieldName}" class="input-nav" tabindex="2" placeholder="Search" /><button type="submit" class="btn btn-inverse"><i class="icon-search"></i></button>
+						<input id="main-search-field" type="text" name="{searchFieldName}" class="input-nav" tabindex="2" placeholder="Search" /><button type="submit" class="btn btn-inverse"><i class="icon-search"></i></button>
 					</div>
 				</form>
 			</f:if>
