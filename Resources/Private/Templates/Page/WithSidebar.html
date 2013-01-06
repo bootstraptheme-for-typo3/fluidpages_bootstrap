@@ -13,6 +13,9 @@
 				<flux:flexform.field.wizard.slider hideParent="TRUE" step="1" width="100" />
 			</flux:flexform.field.input>
 			<flux:flexform.field.select name="position" label="Placement of sidebar" commaSeparatedItems="left,right" />
+			<flux:flexform.field.checkbox name="enableSearch" label="Enable search field in top navigation bar" default="1" />
+			<flux:flexform.field.group name="searchPage" label="Page with search form" allowed="pages" />
+			<flux:flexform.field.input name="searchFieldName" label="Name (HTML attribute) of form field, example tx_solr[q]" default="q" />
 			<flux:flexform.grid>
 				<flux:flexform.grid.row>
 					<flux:flexform.grid.column colPos="1" name="Hero Unit" />
