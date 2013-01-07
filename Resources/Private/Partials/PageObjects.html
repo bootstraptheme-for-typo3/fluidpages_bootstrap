@@ -22,7 +22,7 @@
 			</f:if>
 			<div class="container-fluid navbar-static-top">
 				<a class="brand" href="{v:site.url()}"><v:site.name /></a>
-				<v:page.menu entryLevel="{v:var.typoscript(path: 'lib.menu.main.entryLevel')}">
+				<v:page.menu entryLevel="{v:var.typoscript(path: 'lib.menu.main.entryLevel')}" useShortcutData="TRUE">
 					<ul class="nav">
 						<f:for each="{menu}" as="mainPage" iteration="iteration">
 							<li class="{mainPage.class}"><a tabindex="{iteration.cycle -> v:math.sum(b: 100)}" href="{mainPage.link}" class="{mainPage.class}">{mainPage.title}</a></li>
@@ -36,7 +36,7 @@
 
 <f:section name="SubNavigation">
 	<!-- submenu navigation, collapsible -->
-	<v:page.menu entryLevel="{v:var.typoscript(path: 'lib.menu.sub.entryLevel')}" includeSpacers="TRUE">
+	<v:page.menu entryLevel="{v:var.typoscript(path: 'lib.menu.sub.entryLevel')}" includeSpacers="TRUE" useShortcutData="TRUE">
 		<f:if condition="{menu}">
 			<div class="subnav navbar">
 				<div class="navbar-inner">
@@ -66,7 +66,7 @@
 
 <f:section name="TabNavigation">
 	<!-- tabbed, lower submenu navigation, collapsible -->
-	<v:page.menu entryLevel="{v:var.typoscript(path: 'lib.menu.sub.entryLevel') -> v:math.sum(b: 1)}">
+	<v:page.menu entryLevel="{v:var.typoscript(path: 'lib.menu.sub.entryLevel') -> v:math.sum(b: 1)}" useShortcutData="TRUE">
 		<f:if condition="{menu}">
 			<ul class="nav nav-pills">
 				<f:for each="{menu}" as="submenuPage" iteration="iteration">
