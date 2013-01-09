@@ -37,6 +37,17 @@
 		<flux:flexform.field.checkbox name="enableSearch" label="Enable search field in top navigation bar" default="1" />
 		<flux:flexform.field.group name="searchPageUid" label="Page with search form" allowed="pages" />
 		<flux:flexform.field.input name="searchFieldName" label="Name (HTML attribute) of form field, example tx_solr[q]" default="q" />
+		<flux:flexform.grid>
+			<flux:flexform.grid.row>
+				<flux:flexform.grid.column colPos="1" name="Hero Unit" />
+			</flux:flexform.grid.row>
+			<flux:flexform.grid.row>
+				<flux:flexform.grid.column colPos="0" name="Main Content" />
+			</flux:flexform.grid.row>
+			<flux:flexform.grid.row>
+				<flux:flexform.grid.column colPos="2" name="Footer Content" />
+			</flux:flexform.grid.row>
+		</flux:flexform.grid>
 	</flux:flexform>
 </f:section>
 
