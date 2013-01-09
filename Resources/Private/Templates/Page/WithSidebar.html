@@ -21,14 +21,19 @@
 					<flux:flexform.grid.column colPos="1" name="Hero Unit" />
 				</flux:flexform.grid.row>
 				<flux:flexform.grid.row>
-					<f:if condition="{0: position} == {0: 'left'}">
-						<flux:flexform.grid.column colPos="3" name="Sidebar Content" />
-						<flux:flexform.grid.column colPos="0" name="Main Content" />
-					</f:if>
-					<f:if condition="{0: position} == {0: 'right'}">
-						<flux:flexform.grid.column colPos="0" name="Main Content" />
-						<flux:flexform.grid.column colPos="3" name="Sidebar Content" />
-					</f:if>
+					<v:switch value="{position}">
+						<v:case case="left" break="TRUE">
+							<flux:flexform.grid.column colPos="3" name="Sidebar Content" />
+							<flux:flexform.grid.column colPos="0" name="Main Content" />
+						</v:case>
+						<v:case case="right" break="TRUE">
+							<flux:flexform.grid.column colPos="0" name="Main Content" />
+							<flux:flexform.grid.column colPos="3" name="Sidebar Content" />
+						</v:case>
+						<v:case case="default">
+							<flux:flexform.grid.column colPos="0" name="Main Content" />
+						</v:case>
+					</v:switch>
 				</flux:flexform.grid.row>
 				<flux:flexform.grid.row>
 					<flux:flexform.grid.column colPos="2" name="Footer Content" />
