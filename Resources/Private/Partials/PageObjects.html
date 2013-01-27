@@ -20,7 +20,7 @@
 					</div>
 				</form>
 			</f:if>
-			<div class="container-fluid navbar-static-top">
+			<div class="container navbar-static-top">
 				<a class="brand" href="{v:site.url()}"><v:site.name /></a>
 				<v:page.menu entryLevel="{v:var.typoscript(path: 'lib.menu.main.entryLevel')}" useShortcutData="TRUE">
 					<ul class="nav">
@@ -38,26 +38,24 @@
 	<!-- submenu navigation, collapsible -->
 	<v:page.menu entryLevel="{v:var.typoscript(path: 'lib.menu.sub.entryLevel')}" includeSpacers="TRUE" useShortcutData="TRUE">
 		<f:if condition="{menu}">
-			<div class="subnav navbar">
+			<div class="container subnav navbar">
 				<div class="navbar-inner">
-					<div class="container-fluid">
-						<ul class="nav">
-							<f:for each="{menu}" as="submenuPage" iteration="iteration">
-								<v:switch value="{submenuPage.doktype}">
-									<v:case case="199" break="TRUE">
-										<li class="disabled">
-											<f:if condition="{iteration.isFirst}" else="&nbsp;&nbsp;" />
-											<span class="navbar-text" style="color: #bbbbbb">{submenuPage.title}:</span>
-											&nbsp;
-										</li>
-									</v:case>
-									<v:case case="default" break="TRUE">
-										<li class="{submenuPage.class}"><a tabindex="{iteration.cycle -> v:math.sum(b: 200)}" href="{submenuPage.link}" class="{submenuPage.class}">{submenuPage.title}</a></li>
-									</v:case>
-								</v:switch>
-							</f:for>
-						</ul>
-					</div>
+					<ul class="nav">
+						<f:for each="{menu}" as="submenuPage" iteration="iteration">
+							<v:switch value="{submenuPage.doktype}">
+								<v:case case="199" break="TRUE">
+									<li class="disabled">
+										<f:if condition="{iteration.isFirst}" else="&nbsp;&nbsp;" />
+										<span class="navbar-text" style="color: #bbbbbb">{submenuPage.title}:</span>
+										&nbsp;
+									</li>
+								</v:case>
+								<v:case case="default" break="TRUE">
+									<li class="{submenuPage.class}"><a tabindex="{iteration.cycle -> v:math.sum(b: 200)}" href="{submenuPage.link}" class="{submenuPage.class}">{submenuPage.title}</a></li>
+								</v:case>
+							</v:switch>
+						</f:for>
+					</ul>
 				</div>
 			</div>
 		</f:if>
