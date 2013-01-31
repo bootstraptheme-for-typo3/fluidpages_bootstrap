@@ -9,15 +9,6 @@ plugin.tx_fed {
 plugin.tx_flux.view.widget.Tx_Fluid_ViewHelpers_Widget_PaginateViewHelper.templateRootPath < plugin.tx_fed.page.fluidpages.templateRootPath
 plugin.tx_news.view.widget.Tx_Fluid_ViewHelpers_Widget_PaginateViewHelper.templateRootPath < plugin.tx_fed.page.fluidpages.templateRootPath
 
-page.includeJS.jQueryUI = //ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js
-page.includeJS.jQueryUI.external = 1
-page.includeJS.jQueryUI.forceOnTop = 1
-page.includeJS.jQueryUI.compress = 0
-page.includeJS.jQuery = //ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js
-page.includeJS.jQuery.external = 1
-page.includeJS.jQuery.forceOnTop = 1
-page.includeJS.jQuery.compress = 0
-
 lib.menu {
 	main {
 		entryLevel = 0
