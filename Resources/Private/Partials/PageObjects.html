@@ -6,11 +6,27 @@
 
 <f:section name="SharedResources">
 	<v:asset.style name="sitemap" group="page">
-		.sitemap .lead, .sitemap hr {
+		.sitemap .lead,
 			margin-bottom: 0.5em;
 		}
+		.sitemap hr {
+			margin-bottom: 4em;
+		}
 		.sitemap {
+			margin-top: 2em;
 			margin-bottom: 5em;
+		}
+		.sitemap .header {
+			padding-bottom: -20px;
+			margin-bottom: -40px;
+			text-align: center;
+		}
+		.sitemap .header span {
+			background-color: #FFFFFF;
+			padding: 0 1em 0 1em;
+			display: inline-block;
+			color: #DDDDDD;
+			font-weight: normal;
 		}
 	</v:asset.style>
 	<v:asset.style name="fontawesome" group="cdn" path="//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css" external="TRUE" standalone="TRUE" />
@@ -131,6 +147,9 @@
 		</f:if>
 	</v:page.content.render>
 	<div class="sitemap">
+		<h3 class="header">
+			<span>Site Map</span>
+		</h3>
 		<hr />
 		<div class="row-fluid">
 			<v:page.menu useShortcutData="TRUE">
