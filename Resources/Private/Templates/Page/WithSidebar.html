@@ -20,7 +20,7 @@
 
 		<flux:flexform.grid>
 			<flux:flexform.grid.row>
-				<flux:flexform.grid.column colPos="1" name="Hero Unit" />
+				<flux:flexform.grid.column colPos="1" name="Hero Unit" colspan="2" />
 			</flux:flexform.grid.row>
 			<flux:flexform.grid.row>
 				<v:switch value="{position}">
@@ -33,12 +33,12 @@
 						<flux:flexform.grid.column colPos="3" name="Sidebar Content" />
 					</v:case>
 					<v:case case="default">
-						<flux:flexform.grid.column colPos="0" name="Main Content" />
+						<flux:flexform.grid.column colPos="0" name="Main Content" colspan="2" />
 					</v:case>
 				</v:switch>
 			</flux:flexform.grid.row>
 			<flux:flexform.grid.row>
-				<flux:flexform.grid.column colPos="2" name="Footer Content" />
+				<flux:flexform.grid.column colPos="2" name="Footer Content" colspan="2" />
 			</flux:flexform.grid.row>
 		</flux:flexform.grid>
 	</flux:flexform>
