@@ -5,6 +5,11 @@
      xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
 
 <f:section name="SharedResources">
+	<v:asset.style name="sitemap" group="page">
+		.sitemap .lead, .sitemap hr {
+			margin-bottom: 0.5em;
+		}
+	</v:asset.style>
 	<v:asset.style name="fontawesome" group="cdn" path="//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css" external="TRUE" standalone="TRUE" />
 	<v:asset.style name="bootstrap-css" group="cdn" path="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap.no-icons.min.css" external="TRUE" standalone="TRUE" />
 	<v:asset.script name="bootstrap-core" group="cdn" path="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js" external="TRUE" standalone="TRUE" dependencies="jquery" />
@@ -122,6 +127,29 @@
 			</div>
 		</f:if>
 	</v:page.content.render>
+	<div class="sitemap">
+		<hr />
+		<div class="row-fluid">
+			<v:page.menu useShortcutData="TRUE">
+				<f:for each="{menu}" as="subPage">
+					<div class="span2">
+						<div class="lead muted">
+							{subPage.title}
+						</div>
+						<ul class="unstyled">
+							<v:page.menu useShortcutData="TRUE" pageUid="{subPage.uid}">
+								<f:for each="{menu}" as="submenuPage">
+									<li>
+										<f:link.page pageUid="{submenuPage.uid}" class="muted">{submenuPage.title}</f:link.page>
+									</li>
+								</f:for>
+							</v:page.menu>
+						</ul>
+					</div>
+				</f:for>
+			</v:page.menu>
+		</div>
+	</div>
 </f:section>
 
 <f:section name="Sidebar">
