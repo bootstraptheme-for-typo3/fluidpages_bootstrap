@@ -132,20 +132,20 @@
 		<div class="row-fluid">
 			<v:page.menu useShortcutData="TRUE">
 				<f:for each="{menu}" as="subPage">
-					<div class="span2">
-						<div class="lead muted">
-							{subPage.title}
-						</div>
-						<ul class="unstyled">
-							<v:page.menu useShortcutData="TRUE" pageUid="{subPage.uid}">
+					<v:page.menu useShortcutData="TRUE" pageUid="{subPage.uid}">
+						<div class="span2">
+							<div class="lead muted">
+								<f:link.page pageUid="{subPage.uid}" class="muted">{subPage.title}</f:link.page>
+							</div>
+							<ul class="unstyled">
 								<f:for each="{menu}" as="submenuPage">
 									<li>
 										<f:link.page pageUid="{submenuPage.uid}" class="muted">{submenuPage.title}</f:link.page>
 									</li>
 								</f:for>
-							</v:page.menu>
-						</ul>
-					</div>
+							</ul>
+						</div>
+					</v:page.menu>
 				</f:for>
 			</v:page.menu>
 		</div>
