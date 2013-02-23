@@ -8,6 +8,8 @@ plugin.tx_fed {
 
 plugin.tx_flux.view.widget.Tx_Fluid_ViewHelpers_Widget_PaginateViewHelper.templateRootPath < plugin.tx_fed.page.fluidpages.templateRootPath
 plugin.tx_news.view.widget.Tx_Fluid_ViewHelpers_Widget_PaginateViewHelper.templateRootPath < plugin.tx_fed.page.fluidpages.templateRootPath
+plugin.tx_flux.view.widget.TYPO3\CMS\Fluid\ViewHelpers\Widget\PaginateViewHelper.templateRootPath < plugin.tx_fed.page.fluidpages.templateRootPath
+plugin.tx_news.view.widget.TYPO3\CMS\Fluid\ViewHelpers\Widget\PaginateViewHelper.templateRootPath < plugin.tx_fed.page.fluidpages.templateRootPath
 
 lib.menu {
 	main {
