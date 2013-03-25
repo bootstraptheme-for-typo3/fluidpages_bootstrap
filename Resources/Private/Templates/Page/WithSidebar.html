@@ -8,16 +8,18 @@
 
 <f:section name="Configuration">
 	<flux:flexform id="sample-page" label="Page with sidebar" icon="{v:extension.path.resources(extensionName: 'FluidpagesBootstrap')}Icons/SidebarPage.png">
-		<flux:flexform.field.input name="distribution" label="Width of sidebar (what remains of a 12-column total is used by main content)"
-		                           eval="int,trim" minimum="0" maximum="11" default="4">
-			<flux:flexform.field.wizard.slider hideParent="TRUE" step="1" width="100" />
-		</flux:flexform.field.input>
-		<flux:flexform.field.select name="position" label="Placement of sidebar" commaSeparatedItems="left,right" />
-		<flux:flexform.field.checkbox name="enableSearch" label="Enable search field in top navigation bar" default="1" />
-		<flux:flexform.field.group name="searchPageUid" label="Page with search form" allowed="pages" />
-		<flux:flexform.field.input name="searchFieldName" label="Name (HTML attribute) of form field, example tx_solr[q]" default="q" />
-		<flux:flexform.field.checkbox name="addWell" label="Add 'Well' to Sidebar" />
-
+		{v:var.typoscript(path: 'plugin.tx_fluidpagesbootstrap.settings') -> v:var.set(name: 'overrides')}
+		<f:if condition="{overrides.useTypoScript} < 1">
+			<flux:flexform.field.input name="settings.distribution" label="Width of sidebar (what remains of a 12-column total is used by main content)"
+			                           eval="int,trim" minimum="0" maximum="11" default="4">
+				<flux:flexform.field.wizard.slider hideParent="TRUE" step="1" width="100" />
+			</flux:flexform.field.input>
+			<flux:flexform.field.select name="settings.position" label="Placement of sidebar" commaSeparatedItems="left,right" />
+			<flux:flexform.field.checkbox name="settings.enableSearch" label="Enable search field in top navigation bar" default="1" />
+			<flux:flexform.field.group name="settings.searchPageUid" label="Page with search form" allowed="pages" />
+			<flux:flexform.field.input name="settings.searchFieldName" label="Name (HTML attribute) of form field, example tx_solr[q]" default="q" />
+			<flux:flexform.field.checkbox name="settings.addWell" label="Add 'Well' to Sidebar" />
+		</f:if>
 		<flux:flexform.grid>
 			<flux:flexform.grid.row>
 				<flux:flexform.grid.column colPos="1" name="Hero Unit" colspan="2" />
@@ -50,20 +52,20 @@
 
 <f:section name="Content">
 	<div class="row-fluid">
-		<v:switch value="{position}">
+		<v:switch value="{settings.position}">
 			<v:case case="left" break="TRUE">
-				<div class="span{distribution}">
+				<div class="span{settings.distribution}">
 					<f:render partial="PageObjects" section="Sidebar" arguments="{_all}" />
 				</div>
-				<div class="span{v:math.subtract(a: 12, b: distribution)}">
+				<div class="span{v:math.subtract(a: 12, b: settings.distribution)}">
 					<v:page.content.render column="0" />
 				</div>
 			</v:case>
 			<v:case case="right" break="TRUE">
-				<div class="span{v:math.subtract(a: 12, b: distribution)}">
+				<div class="span{v:math.subtract(a: 12, b: settings.distribution)}">
 					<v:page.content.render column="0" />
 				</div>
-				<div class="span{distribution}">
+				<div class="span{settings.distribution}">
 					<f:render partial="PageObjects" section="Sidebar" arguments="{_all}" />
 				</div>
 			</v:case>

@@ -8,14 +8,17 @@
 
 <f:section name="Configuration">
 	<flux:flexform id="sample-page" label="Standard Page" icon="{v:extension.path.resources(extensionName: 'FluidpagesBootstrap')}Icons/Page.png">
-		<flux:flexform.field.input name="settings.entryLevel" label="Main menu entry level override for this page only"
-		                           eval="int,trim" minimum="0" maximum="6" default="{v:var.typoscript(path: 'lib.menu.main.entryLevel')}">
-		</flux:flexform.field.input>
-		<flux:flexform.field.checkbox name="enableSearch" label="Enable search field in top navigation bar" default="1" />
-		<flux:flexform.field.select size="1" minItems="0" table="pages" maxItems="1" name="searchPageUid" label="Page with search form">
-			<flux:flexform.field.wizard.list table="pages" />
-		</flux:flexform.field.select>
-		<flux:flexform.field.input name="searchFieldName" label="Name (HTML attribute) of form field, example tx_solr[q]" default="q" />
+		{v:var.typoscript(path: 'plugin.tx_fluidpagesbootstrap.settings') -> v:var.set(name: 'overrides')}
+		<f:if condition="{overrides.useTypoScript} < 1">
+			<flux:flexform.field.input name="settings.entryLevel" label="Main menu entry level override for this page only"
+			                           eval="int,trim" minimum="0" maximum="6" default="{v:var.typoscript(path: 'lib.menu.main.entryLevel')}">
+			</flux:flexform.field.input>
+			<flux:flexform.field.checkbox name="settings.enableSearch" label="Enable search field in top navigation bar" default="1" />
+			<flux:flexform.field.select size="1" minItems="0" table="pages" maxItems="1" name="searchPageUid" label="Page with search form">
+				<flux:flexform.field.wizard.list table="pages" />
+			</flux:flexform.field.select>
+			<flux:flexform.field.input name="settings.searchFieldName" label="Name (HTML attribute) of form field, example tx_solr[q]" default="q" />
+		</f:if>
 		<flux:flexform.grid>
 			<flux:flexform.grid.row>
 				<flux:flexform.grid.column colPos="1" name="Hero Unit" />
