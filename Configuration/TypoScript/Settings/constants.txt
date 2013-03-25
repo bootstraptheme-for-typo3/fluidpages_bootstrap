@@ -1,0 +1,27 @@
+plugin.tx_fluidpagesbootstrap.settings.useTypoScript = 1
+plugin.tx_fluidpagesbootstrap.settings {
+	# cat=FLUIDPAGESBOOTSTRAP/settings; type=int+; label=main menu entry level - other menus calculated based on this
+	entryLevel = 0
+	# cat=FLUIDPAGESBOOTSTRAP/settings; type=boolean; label=enable the top right corner search field
+	enableSearch = 1
+	# cat=FLUIDPAGESBOOTSTRAP/settings; type=small; label=name attribute of search field
+	searchFieldName = q
+	# cat=FLUIDPAGESBOOTSTRAP/settings; type=boolean; label=enables a "well" class on the side bar of templates using side bar
+	addWell = 0
+	# cat=FLUIDPAGESBOOTSTRAP/settings; type=boolean; label=make the well's padding smaller than standard
+	wellSmall = 0
+	# cat=FLUIDPAGESBOOTSTRAP/settings; type=color; label=Jumbotron light background color
+	lightJumbotronColor =
+	# cat=FLUIDPAGESBOOTSTRAP/settings; type=color; label=Jumbotron dark background color
+	darkJumbotronColor =
+	# cat=FLUIDPAGESBOOTSTRAP/settings; type=color; label=Jumbotron text color
+	jumbotronTextColor =
+	# cat=FLUIDPAGESBOOTSTRAP/settings; type=int+; label=Jumbotron general padding
+	jumbotronPadding = 50
+	# cat=FLUIDPAGESBOOTSTRAP/settings; type=int+; label=Jumbotron header font size
+	headerFontSize = 48
+	# cat=FLUIDPAGESBOOTSTRAP/settings; type=int+; label=Jumbotron paragraph font size
+	paragraphFontSize = 22
+	# cat=FLUIDPAGESBOOTSTRAP/settings; type=int+; label=Jumbotron margin bottom
+	jumbotronMarginBottom = 40
+}
