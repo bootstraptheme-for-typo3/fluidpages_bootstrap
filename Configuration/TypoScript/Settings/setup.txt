@@ -1,0 +1,15 @@
+plugin.tx_fluidpagesbootstrap.settings.useTypoScript = 1
+plugin.tx_fluidpagesbootstrap.settings {
+	entryLevel = {$plugin.tx_fluidpagesbootstrap.settings.entryLevel}
+	enableSearch = {$plugin.tx_fluidpagesbootstrap.settings.enableSearch}
+	searchFieldName = {$plugin.tx_fluidpagesbootstrap.settings.searchFieldName}
+	addWell = {$plugin.tx_fluidpagesbootstrap.settings.addWell}
+	wellSmall = {$plugin.tx_fluidpagesbootstrap.settings.wellSmall}
+	lightJumbotronColor = {$plugin.tx_fluidpagesbootstrap.settings.lightJumbotronColor}
+	darkJumbotronColor = {$plugin.tx_fluidpagesbootstrap.settings.darkJumbotronColor}
+	jumbotronTextColor = {$plugin.tx_fluidpagesbootstrap.settings.jumbotronTextColor}
+	jumbotronPadding = {$plugin.tx_fluidpagesbootstrap.settings.jumbotronPadding}
+	headerFontSize = {$plugin.tx_fluidpagesbootstrap.settings.headerFontSize}
+	paragraphFontSize = {$plugin.tx_fluidpagesbootstrap.settings.paragraphFontSize}
+	jumbotronMarginBottom = {$plugin.tx_fluidpagesbootstrap.settings.jumbotronMarginBottom}
+}

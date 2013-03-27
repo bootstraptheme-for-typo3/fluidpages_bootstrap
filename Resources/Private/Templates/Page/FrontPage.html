@@ -6,8 +6,10 @@
      xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
      xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
 
-	<f:section name="Configuration">
-		<flux:flexform id="front-page" label="Front Page" icon="{v:extension.path.resources(extensionName: 'FluidpagesBootstrap')}Icons/FrontPage.png">
+<f:section name="Configuration">
+	<flux:flexform id="front-page" label="Front Page" icon="{v:extension.path.resources(extensionName: 'FluidpagesBootstrap')}Icons/FrontPage.png">
+		{v:var.typoscript(path: 'plugin.tx_fluidpagesbootstrap.settings') -> v:var.set(name: 'overrides')}
+		<f:if condition="{overrides.useTypoScript} < 1">
 			<flux:flexform.field.input name="settings.entryLevel" label="Main menu entry level override for this page only"
 			                           eval="int,trim" minimum="0" maximum="6" default="{v:var.typoscript(path: 'lib.menu.main.entryLevel')}">
 			</flux:flexform.field.input>
@@ -36,32 +38,33 @@
 			                           minimum="0" maximum="80" eval="int,trim">
 				<flux:Flexform.field.wizard.slider hideParent="TRUE" width="200" />
 			</flux:flexform.field.input>
-			<flux:flexform.field.checkbox name="enableSearch" label="Enable search field in top navigation bar" default="1" />
+			<flux:flexform.field.checkbox name="settings.enableSearch" label="Enable search field in top navigation bar" default="1" />
 			<flux:flexform.field.select size="1" minItems="0" table="pages" maxItems="1" name="searchPageUid" label="Page with search form">
 				<flux:flexform.field.wizard.list table="pages" />
 			</flux:flexform.field.select>
-			<flux:flexform.field.input name="searchFieldName" label="Name (HTML attribute) of form field, example tx_solr[q]" default="q" />
-			<flux:flexform.grid>
-				<flux:flexform.grid.row>
-					<flux:flexform.grid.column colPos="1" name="Jumbotron" />
-				</flux:flexform.grid.row>
-				<flux:flexform.grid.row>
-					<flux:flexform.grid.column colPos="0" name="Main Content" />
-				</flux:flexform.grid.row>
-				<flux:flexform.grid.row>
-					<flux:flexform.grid.column colPos="2" name="Footer Content" />
-				</flux:flexform.grid.row>
-			</flux:flexform.grid>
-		</flux:flexform>
-	</f:section>
+			<flux:flexform.field.input name="settings.searchFieldName" label="Name (HTML attribute) of form field, example tx_solr[q]" default="q" />
+		</f:if>
+		<flux:flexform.grid>
+			<flux:flexform.grid.row>
+				<flux:flexform.grid.column colPos="1" name="Jumbotron" />
+			</flux:flexform.grid.row>
+			<flux:flexform.grid.row>
+				<flux:flexform.grid.column colPos="0" name="Main Content" />
+			</flux:flexform.grid.row>
+			<flux:flexform.grid.row>
+				<flux:flexform.grid.column colPos="2" name="Footer Content" />
+			</flux:flexform.grid.row>
+		</flux:flexform.grid>
+	</flux:flexform>
+</f:section>
 
-	<f:section name="Resources">
-		<f:render partial="PageObjects" section="SharedResources" />
-	</f:section>
+<f:section name="Resources">
+	<f:render partial="PageObjects" section="SharedResources" />
+</f:section>
 
-	<f:section name="Content">
-		<!-- main content output - default rendering -->
-		<v:page.content.render column="0" />
-	</f:section>
+<f:section name="Content">
+	<!-- main content output - default rendering -->
+	<v:page.content.render column="0" />
+</f:section>
 
 </div>
