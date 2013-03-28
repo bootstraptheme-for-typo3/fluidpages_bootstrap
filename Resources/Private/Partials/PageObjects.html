@@ -90,7 +90,7 @@
 
 <f:section name="TabNavigation">
 	<!-- tabbed, lower submenu navigation, collapsible -->
-	<v:page.menu entryLevel="{settings.entryLevel -> v:math.round() -> v:math.sum(b: 2)}" useShortcutData="TRUE">
+	<v:page.menu entryLevel="{settings.entryLevel -> v:math.ceil() -> v:math.sum(b: 2)}" useShortcutData="TRUE">
 		<f:if condition="{menu}">
 			<ul class="nav nav-pills">
 				<f:for each="{menu}" as="submenuPage" iteration="iteration">
