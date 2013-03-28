@@ -48,7 +48,7 @@
 					</form>
 				</f:if>
 				<a class="brand" href="{v:site.url()}"><v:site.name /></a>
-				<v:page.menu entryLevel="{v:var.typoscript(path: 'plugin.tx_fluidpagesbootstrap.settings.entryLevel')}" useShortcutData="TRUE">
+				<v:page.menu entryLevel="{settings.entryLevel}" useShortcutData="TRUE">
 					<ul class="nav">
 						<f:for each="{menu}" as="mainPage" iteration="iteration">
 							<li class="{mainPage.class}"><a tabindex="{iteration.cycle -> v:math.sum(b: 100)}" href="{mainPage.link}" class="{mainPage.class}">{mainPage.title}</a></li>
@@ -62,24 +62,24 @@
 
 <f:section name="SubNavigation">
 	<!-- submenu navigation, collapsible -->
-	<v:page.menu entryLevel="{v:var.typoscript(path: 'plugin.tx_fluidpagesbootstrap.settings.entryLevel') -> v:math.sum(b: 1)}" includeSpacers="TRUE" useShortcutData="TRUE">
+	<v:page.menu entryLevel="{settings.entryLevel -> v:math.ceil() -> v:math.sum(b: 1)}" includeSpacers="TRUE" useShortcutData="TRUE">
 		<f:if condition="{menu}">
 			<div class="container subnav navbar">
 				<div class="navbar-inner">
 					<ul class="nav">
 						<f:for each="{menu}" as="submenuPage" iteration="iteration">
-							<v:switch value="{submenuPage.doktype}">
-								<v:case case="199" break="TRUE">
+							<f:if condition="{submenuPage.doktype} == 199">
+								<f:then>
 									<li class="disabled">
 										<f:if condition="{iteration.isFirst}" else="&nbsp;&nbsp;" />
 										<span class="navbar-text" style="color: #bbbbbb">{submenuPage.title}:</span>
 										&nbsp;
 									</li>
-								</v:case>
-								<v:case case="default" break="TRUE">
+								</f:then>
+								<f:else>
 									<li class="{submenuPage.class}"><a tabindex="{iteration.cycle -> v:math.sum(b: 200)}" href="{submenuPage.link}" class="{submenuPage.class}">{submenuPage.title}</a></li>
-								</v:case>
-							</v:switch>
+								</f:else>
+							</f:if>
 						</f:for>
 					</ul>
 				</div>
@@ -90,7 +90,7 @@
 
 <f:section name="TabNavigation">
 	<!-- tabbed, lower submenu navigation, collapsible -->
-	<v:page.menu entryLevel="{v:var.typoscript(path: 'plugin.tx_fluidpagesbootstrap.settings.entryLevel') -> v:math.sum(b: 2)}" useShortcutData="TRUE">
+	<v:page.menu entryLevel="{settings.entryLevel -> v:math.round() -> v:math.sum(b: 2)}" useShortcutData="TRUE">
 		<f:if condition="{menu}">
 			<ul class="nav nav-pills">
 				<f:for each="{menu}" as="submenuPage" iteration="iteration">
@@ -118,9 +118,6 @@
 	<!-- jumbotron with background image, optional content elements from colPos 1 (one) -->
 	<v:page.content.render column="1" as="jumbotronContentElements">
 		<f:if condition="{jumbotronContentElements}">
-			<f:if condition="{v:var.typoscript(path: 'plugin.tx_fluidpagesbootstrap.settings')}">
-				{v:var.typoscript(path: 'plugin.tx_fluidpagesbootstrap.settings') -> v:var.set(name: 'settings')}
-			</f:if>
 			<v:asset.style name="jumbotron" path="{f:uri.resource(path: 'Stylesheets/Jumbotron.css', extensionName: 'FluidpagesBootstrap')}"
 					fluid="TRUE" arguments="{light: settings.lightJumbotronColor, dark: settings.darkJumbotronColor,
 						padding: settings.jumbotronPadding, text: settings.jumbotronTextColor,
