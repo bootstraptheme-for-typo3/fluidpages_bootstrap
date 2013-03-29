@@ -3,7 +3,6 @@ plugin.tx_fluidpagesbootstrap.view {
 	partialRootPath = EXT:fluidpages_bootstrap/Resources/Private/Partials/
 	layoutRootPath = EXT:fluidpages_bootstrap/Resources/Private/Layouts/
 }
-plugin.tx_fluidpages.collections.fluidpages_bootstrap < plugin.tx_fluidpagesbootstrap.view
 
 plugin.tx_flux.view.widget.Tx_Fluid_ViewHelpers_Widget_PaginateViewHelper.templateRootPath < plugin.tx_fluidpagesbootstrap.view.templateRootPath
 plugin.tx_news.view.widget.Tx_Fluid_ViewHelpers_Widget_PaginateViewHelper.templateRootPath < plugin.tx_fluidpagesbootstrap.view.templateRootPath
