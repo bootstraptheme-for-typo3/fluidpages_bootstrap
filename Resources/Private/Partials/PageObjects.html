@@ -138,11 +138,11 @@
 	<v:page.content.render column="2" as="footerContentElements">
 		<f:if condition="{footerContentElements}">
 			<div class="footer">
-		<span class="right">
-			<f:for each="{footerContentElements}" as="footerContentElement">
-				<f:format.raw>{footerContentElement}</f:format.raw>
-			</f:for>
-		</span>
+				<div class="right">
+					<f:for each="{footerContentElements}" as="footerContentElement">
+						<f:format.raw>{footerContentElement}</f:format.raw>
+					</f:for>
+				</div>
 			</div>
 		</f:if>
 	</v:page.content.render>
