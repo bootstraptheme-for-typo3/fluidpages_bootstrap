@@ -53,20 +53,20 @@
 
 <f:section name="Content">
 	<div class="row-fluid">
-		<v:switch value="{settings.position}">
+		<v:switch value="{position}">
 			<v:case case="left" break="TRUE">
-				<div class="span{settings.distribution}">
+				<div class="span{distribution}">
 					<f:render partial="PageObjects" section="Sidebar" arguments="{_all}" />
 				</div>
-				<div class="span{v:math.subtract(a: 12, b: settings.distribution)}">
+				<div class="span{v:math.subtract(a: 12, b: distribution)}">
 					<v:page.content.render column="0" />
 				</div>
 			</v:case>
 			<v:case case="right" break="TRUE">
-				<div class="span{v:math.subtract(a: 12, b: settings.distribution)}">
+				<div class="span{v:math.subtract(a: 12, b: distribution)}">
 					<v:page.content.render column="0" />
 				</div>
-				<div class="span{settings.distribution}">
+				<div class="span{distribution}">
 					<f:render partial="PageObjects" section="Sidebar" arguments="{_all}" />
 				</div>
 			</v:case>
