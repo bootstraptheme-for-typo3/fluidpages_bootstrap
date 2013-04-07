@@ -25,7 +25,7 @@ selection boxes in page properties - configurable with a page template to use fo
 
 ## References
 
-* https://github.com/NamelessCoder/flux is a dependency and is used to configure how the content template variable are defined.
-* https://github.com/NamelessCoder/vhs is a highly suggested companion extension for creating Fluid Page templates
-* https://github.com/NamelessCoder/fluidpages_bootstrap is a collection of Fluid Page templates written for Twitter Bootstrap using
+* https://github.com/FluidTYPO3/flux is a dependency and is used to configure how the content template variable are defined.
+* https://github.com/FluidTYPO3/vhs is a highly suggested companion extension for creating Fluid Page templates
+* https://github.com/FluidTYPO3/fluidpages_bootstrap is a collection of Fluid Page templates written for Twitter Bootstrap using
   VHS ViewHelpers
