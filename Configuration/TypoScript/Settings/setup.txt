@@ -1,4 +1,4 @@
-plugin.tx_fluidpagesbootstrap.settings.useTypoScript = 1
+plugin.tx_fluidpagesbootstrap.settings.useTypoScript = {$plugin.tx_fluidpagesbootstrap.settings.useTypoScript}
 plugin.tx_fluidpagesbootstrap.settings {
 	entryLevel = {$plugin.tx_fluidpagesbootstrap.settings.entryLevel}
 	enableSearch = {$plugin.tx_fluidpagesbootstrap.settings.enableSearch}
