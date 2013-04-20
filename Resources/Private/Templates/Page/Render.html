@@ -7,7 +7,7 @@
      xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
 
 <f:section name="Configuration">
-	<flux:flexform id="sample-page" label="Standard Page" icon="{v:extension.path.resources(extensionName: 'FluidpagesBootstrap')}Icons/Page.png">
+	<flux:flexform id="sample-page" label="Standard Page" icon="{v:extension.path.resources()}Icons/Page.png">
 		{v:var.typoscript(path: 'plugin.tx_fluidpagesbootstrap.settings') -> v:var.set(name: 'overrides')}
 		<f:if condition="{overrides.useTypoScript} < 1">
 			<flux:flexform.field.input name="settings.entryLevel" label="Main menu entry level override for this page only"
