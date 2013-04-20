@@ -12,4 +12,6 @@ plugin.tx_fluidpagesbootstrap.settings {
 	headerFontSize = {$plugin.tx_fluidpagesbootstrap.settings.headerFontSize}
 	paragraphFontSize = {$plugin.tx_fluidpagesbootstrap.settings.paragraphFontSize}
 	jumbotronMarginBottom = {$plugin.tx_fluidpagesbootstrap.settings.jumbotronMarginBottom}
+	position = {$plugin.tx_fluidpagesbootstrap.settings.position}
+	distribution = {$plugin.tx_fluidpagesbootstrap.settings.distribution}
 }
