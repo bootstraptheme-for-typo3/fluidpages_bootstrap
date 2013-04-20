@@ -24,4 +24,8 @@ plugin.tx_fluidpagesbootstrap.settings {
 	paragraphFontSize = 22
 	# cat=FLUIDPAGESBOOTSTRAP/settings; type=int+; label=Jumbotron margin bottom
 	jumbotronMarginBottom = 40
+	# cat=FLUIDPAGESBOOTSTRAP/settings; type=options[left,right]; label=Placement of sidebar
+	position = left
+	# cat=FLUIDPAGESBOOTSTRAP/settings; type=int+; label=Width of sidebar (what remains of a 12-column total is used by main content)
+	distribution = 4
 }
