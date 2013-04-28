@@ -7,7 +7,7 @@
      xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
 
 <f:section name="Configuration">
-	<flux:flexform id="sidebar" label="Page with sidebar" icon="{v:extension.path.resources(extensionName: 'FluidpagesBootstrap')}Icons/SidebarPage.png">
+	<flux:flexform id="sidebar" label="Page with sidebar" icon="{f:uri.resource(path: 'Icons/SidebarPage.png')}">
 		{v:var.typoscript(path: 'plugin.tx_fluidpagesbootstrap.settings') -> v:var.set(name: 'overrides')}
 		<f:if condition="{overrides.useTypoScript} < 1">
 			<flux:flexform.field.input name="settings.distribution" label="Width of sidebar (what remains of a 12-column total is used by main content)"
