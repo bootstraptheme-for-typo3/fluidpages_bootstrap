@@ -1,9 +1,9 @@
-TYPO3 extension Fluid Pages - Bootstrap: Fluid Page Templates for Twitter Bootstrap
-===================================================================================
+Fluid Page Templates for Twitter Bootstrap
+==========================================
 
-## What is it?
+> An extension providing a set of specially formatted Fluid templates usable as page templates enabled by `EXT:fluidpages`
 
-An extension providing a set of specially formatted Fluid templates usable as page templates enabled by `EXT:fluidpages`
+[![Build Status](https://travis-ci.org/FluidTYPO3/fluidpages_bootstrap.png?branch=master)](https://travis-ci.org/FluidTYPO3/fluidpages_bootstrap)
 
 ## What does it do?
 
