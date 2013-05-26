@@ -22,7 +22,7 @@ class ext_update {
 		$rows = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows('uid,tx_fed_page_controller_action,tx_fed_page_controller_action_sub', 'pages', $clause);
 		$count = array();
 		// first pass: adjust page template selections to match new extension_key->actionName syntax
-		foreach($rows as $row) {
+		foreach ($rows as $row) {
 			$modified = FALSE;
 			if (FALSE !== strpos($row['tx_fed_page_controller_action'], 'fluidpages->')) {
 				$row['tx_fed_page_controller_action'] = str_replace('fluidpages->', 'fluidpages_bootstrap->', $row['tx_fed_page_controller_action']);
