@@ -52,7 +52,7 @@ class Tx_FluidpagesBootstrap_Controller_PageController extends Tx_Fluidpages_Con
 	/**
 	 * @return string
 	 */
-	public function sideBarAction() {
+	public function withSidebarAction (){
 
 	}
 
