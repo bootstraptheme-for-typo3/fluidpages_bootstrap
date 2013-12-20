@@ -185,6 +185,14 @@ return array (
 								'packagePath' => 'typo3conf/ext/fluidpages/',
 								'classesPath' => 'Classes/',
 								),
+						'fluidpages_bootstrap' =>
+								array (
+								'manifestPath' => '',
+								'composerName' => 'fluidtypo3/fluidpages_bootstrap',
+								'state' => 'active',
+								'packagePath' => 'typo3conf/ext/fluidpages_bootstrap/',
+								'classesPath' => 'Classes/',
+								),
 						'form' =>
 								array (
 										'manifestPath' => '',
