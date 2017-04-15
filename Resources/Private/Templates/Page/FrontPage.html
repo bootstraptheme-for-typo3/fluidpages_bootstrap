@@ -39,7 +39,7 @@
 				<flux:Flexform.field.wizard.slider hideParent="TRUE" width="200" />
 			</flux:field.input>
 			<flux:field.checkbox name="settings.enableSearch" label="Enable search field in top navigation bar" default="1" />
-			<flux:field.relation size="1" minItems="0" table="pages" maxItems="1" name="searchPageUid" label="Page with search form">
+			<flux:field.relation size="1" minItems="0" items="pages" maxItems="1" name="searchPageUid" label="Page with search form">
 				<flux:wizard.list table="pages" />
 			</flux:field.relation>
 			<flux:field.input name="settings.searchFieldName" label="Name (HTML attribute) of form field, example tx_solr[q]" default="q" />
